@@ -3,6 +3,7 @@ pandas
 nltk
 tqdm
 matplotlib
+PyYAML
 torch
 transformers
 transformers[sentencepiece]
