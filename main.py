@@ -1,4 +1,15 @@
-from src.logging import logging
+from src.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeling
+from src.logging import logger
 
 
-logging.info("Testing logging function")
+
+STAGE_NAME = "Data Ingestion stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_ingestion = DataIngestionTrainingPipeling()
+    data_ingestion.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+
+except Exception as e:
+    logger.exception(e)
+    raise e
